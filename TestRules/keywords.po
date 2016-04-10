@@ -1,0 +1,20 @@
+%YAML
+
+configGroups:
+- name: test_group_keyword
+  defaultToProxy: true
+  ruleSets: 
+  - google
+  - complex
+
+ruleSets:
+- name: test_rule_keyword
+  rules:
+  - domain,baidu.com,reject 
+  - DOMAIN-MATCH, google, PROXY
+  - DOMAIN-SUffix, qq.com, DIRECT
+  - URL,     http://forum.potatso.com,    PROXY
+  - URL-MATCH, lives\.l\.qq\.com, REJCT # 腾讯视频广告
+  - IP-CIDR,  91.108.56.0/22, Proxy
+  - GEOIP, CN, DIRECT
+
