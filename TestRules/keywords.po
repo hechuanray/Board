@@ -16,5 +16,12 @@ ruleSets:
   - GEOIP, CN, DIRECT
 
 proxies: 
-- 
+- name: test_proxy_keyword1
+  type: shadowsocks
+  host: 10.0.0.0
+  port: 443
+  encryption: rc4-md5
+  password: 12345R^*@P#)!
 
+- name: test_proxy_keyword2
+  uri: ss://salsa20:12345R^*@P#)!@10.0.0.0:65500
