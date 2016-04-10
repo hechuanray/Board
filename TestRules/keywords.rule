@@ -1,0 +1,32 @@
+configGroups:
+- name: test_group_keyword1
+  defaultToProxy: false
+  proxy: test_proxy_keyword1
+  ruleSets: 
+  - test_rule_keyword
+
+- name: test_group_keyword2
+  defaultToProxy: true
+  proxy: test_proxy_keyword2
+
+ruleSets:
+- name: test_rule_keyword
+  rules:
+  - domain,baidu.com,reject 
+  - DOMAIN-MATCH, google, PROXY
+  - DOMAIN-SUffix, 163.com, DIRECT
+  - URL,     http://forum.potatsruleo.com,    PROXY
+  - URL-MATCH, lives\.l\.qq\.com, REJECT # 腾讯视频广告
+  - IP-CIDR,  91.108.56.0/22, Proxy
+  - GEOIP, CN, DIRECT
+
+proxies: 
+- name: test_proxy_keyword1
+  type: shadowsocks
+  host: 10.0.0.0
+  port: 443
+  encryption: rc4-md5
+  password: 12345R^*@P#)!
+
+- name: test_proxy_keyword2
+  uri: ss://salsa20:12345R^*@P#)!@10.0.0.0:65500
