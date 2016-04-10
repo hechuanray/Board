@@ -1,6 +1,6 @@
 configGroups:
 - name: test_group_keyword
-  defaultToProxy: true
+  defaultToProxy: false
   ruleSets: 
   - test_rule_keyword
 
