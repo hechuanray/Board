@@ -1,8 +1,13 @@
 configGroups:
-- name: test_group_keyword
+- name: test_group_keyword1
   defaultToProxy: false
+  proxy: test_proxy_keyword1
   ruleSets: 
   - test_rule_keyword
+
+- name: test_group_keyword2
+  defaultToProxy: true
+  proxy: test_proxy_keyword2
 
 ruleSets:
 - name: test_rule_keyword
