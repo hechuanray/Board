@@ -1,11 +1,8 @@
-%YAML
-
 configGroups:
 - name: test_group_keyword
   defaultToProxy: true
   ruleSets: 
-  - google
-  - complex
+  - test_rule_keyword
 
 ruleSets:
 - name: test_rule_keyword
